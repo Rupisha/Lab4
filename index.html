@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fish Species Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Fish Species</h1>
+        <form action="{{ url_for('predict') }}" method="post" class="predict-form">
+            <input type="text" name="Weight" placeholder="Weight" required="required" />
+            <input type="text" name="Length1" placeholder="Length1" required="required" />
+            <input type="text" name="Length2" placeholder="Length2" required="required" />
+            <input type="text" name="Length3" placeholder="Length3" required="required" />
+            <input type="text" name="Height" placeholder="Height" required="required" />
+            <input type="text" name="Width" placeholder="Width" required="required" />
+            <button type="submit" class="btn predict-btn">Predict</button>
+        </form>
+        <div class="prediction-output">
+            {{ prediction_text }}
+        </div>
+    </div>
+</body>
+</html>
